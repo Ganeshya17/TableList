@@ -1,8 +1,8 @@
 //
-//  TableListTests.swift
-//  TableListTests
+//  TableListCell.swift
+//  TableList
 //
-//  Created by SivaMac on 6/7/20.
+//  Created by Syed Riyaz on 06/07/20.
 //  Copyright © 2020 SivaMac. All rights reserved.
 //
 

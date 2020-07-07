@@ -6,7 +6,6 @@ target 'TableList' do
   use_frameworks!
 
   # Pods for TableList
-  pod 'Alamofire','~> 4.9'
   pod 'SDWebImage', '~> 5.0'
   pod 'SnapKit', '~> 5.0.0'
 

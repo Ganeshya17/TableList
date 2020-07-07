@@ -19,6 +19,7 @@
 		9DFCC07C99066BF590D9B20C /* Pods_TableList_TableListUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68FD399EC5BFFE802742C3DB /* Pods_TableList_TableListUITests.framework */; };
 		9E673B0C24B3442B0083147C /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E673B0B24B3442B0083147C /* ListView.swift */; };
 		9E673B0E24B3467E0083147C /* TableListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E673B0D24B3467E0083147C /* TableListModel.swift */; };
+		9E673B1024B34F270083147C /* TableListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E673B0F24B34F270083147C /* TableListCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		9CFD70F096A5514E53AB8E39 /* Pods-TableList-TableListUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TableList-TableListUITests.debug.xcconfig"; path = "Target Support Files/Pods-TableList-TableListUITests/Pods-TableList-TableListUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9E673B0B24B3442B0083147C /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		9E673B0D24B3467E0083147C /* TableListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableListModel.swift; sourceTree = "<group>"; };
+		9E673B0F24B34F270083147C /* TableListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableListCell.swift; sourceTree = "<group>"; };
 		E50A325384F49B195CF20958 /* Pods-TableListTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TableListTests.release.xcconfig"; path = "Target Support Files/Pods-TableListTests/Pods-TableListTests.release.xcconfig"; sourceTree = "<group>"; };
 		FF766346AF1876C97B9E90B0 /* Pods_TableListTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TableListTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -142,9 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				6B7DEA0124B33D4E008ABBCF /* AppDelegate.swift */,
-				6B7DEA0324B33D4E008ABBCF /* ViewController.swift */,
-				9E673B0B24B3442B0083147C /* ListView.swift */,
-				9E673B0D24B3467E0083147C /* TableListModel.swift */,
+				9E0E5F9624B47F2400A0EBD4 /* TableList */,
 				6B7DEA0524B33D4E008ABBCF /* Main.storyboard */,
 				6B7DEA0824B33D51008ABBCF /* Assets.xcassets */,
 				6B7DEA0A24B33D51008ABBCF /* LaunchScreen.storyboard */,
@@ -171,6 +171,17 @@
 			path = TableListUITests;
 			sourceTree = "<group>";
 		};
+		9E0E5F9624B47F2400A0EBD4 /* TableList */ = {
+			isa = PBXGroup;
+			children = (
+				6B7DEA0324B33D4E008ABBCF /* ViewController.swift */,
+				9E673B0B24B3442B0083147C /* ListView.swift */,
+				9E673B0D24B3467E0083147C /* TableListModel.swift */,
+				9E673B0F24B34F270083147C /* TableListCell.swift */,
+			);
+			path = TableList;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -183,6 +194,7 @@
 				6B7DE9FB24B33D4E008ABBCF /* Frameworks */,
 				6B7DE9FC24B33D4E008ABBCF /* Resources */,
 				EF68A2023CD35CFE23422213 /* [CP] Embed Pods Frameworks */,
+				9E0E5F9324B46B1500A0EBD4 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -364,6 +376,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TableList-TableListUITests/Pods-TableList-TableListUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		9E0E5F9324B46B1500A0EBD4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to inseif which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfirt its path.\n";
+		};
 		EF68A2023CD35CFE23422213 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -413,6 +442,7 @@
 				9E673B0E24B3467E0083147C /* TableListModel.swift in Sources */,
 				6B7DEA0424B33D4E008ABBCF /* ViewController.swift in Sources */,
 				6B7DEA0224B33D4E008ABBCF /* AppDelegate.swift in Sources */,
+				9E673B1024B34F270083147C /* TableListCell.swift in Sources */,
 				9E673B0C24B3442B0083147C /* ListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
