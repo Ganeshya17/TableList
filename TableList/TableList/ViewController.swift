@@ -19,6 +19,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+       setup()
+    }
+    func setup(){
         self.view.addSubview(tableListView)
         tableListView.snp.makeConstraints {
             $0.left.right.top.bottom.equalToSuperview()
@@ -46,11 +49,12 @@ class ViewController: UIViewController {
         let task = session.dataTask(with: url, completionHandler: { data, response, error -> Void in
             guard let data = data else { return }
             do {
-                let str = String(decoding: data, as: UTF8.self)
+                let str = String(decoding: data, as: UTF8.self) // convert json into string
                 let data = str.data(using: .utf8)!
                 do {
                     if let json = try JSONSerialization.jsonObject(with: data, options : .allowFragments) as? [String:Any] {
                 let jsonData = try JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
+                        // json Success response
                         self.jsonarr = try JSONDecoder().decode(TableListModel.self, from: jsonData)
                         print(self.jsonarr?.title ?? "")
                         DispatchQueue.main.async {
@@ -63,7 +67,7 @@ class ViewController: UIViewController {
                     }
                 }
 
-            } catch {
+            } catch { // json error message
                 print("error", error)
             }
         })
@@ -71,7 +75,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
+extension ViewController: UITableViewDelegate, UITableViewDataSource { // Table List data Loading
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.jsonarr?.rows.count ?? 0
     }
@@ -81,7 +85,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         cell.lblTittle.text = row?[indexPath.row].title
         cell.lblDescription.text = row?[indexPath.row].rowDescription
         let urlImage = row?[indexPath.row].imageHref?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-        print("urlImage", urlImage ?? "")
         cell.img.sd_setImage(with: URL(string: urlImage ?? ""), placeholderImage: nil, options: .refreshCached, completed: nil)
         return cell
     }
